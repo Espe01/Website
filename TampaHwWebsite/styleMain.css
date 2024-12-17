@@ -1,0 +1,155 @@
+/* Reset some default styles */
+body, h1, h2, h3, h4, h5, p {
+    font-family: arial,Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+	margin: 0;
+    padding: 0;
+}
+
+/* Global styles */
+body {
+    font-family: Castellar;
+    background-color: blue;
+    color: #333;
+	background-image: url("google.com"), url("repair.jpg");
+	
+}
+.g{
+	color: gray;
+}
+
+.topnav input[type=text] {
+	display: inline-block;
+    margin-left: 10px;
+}
+	
+.topnav button[type=submit]{
+	padding: 5px;
+    background-color: gray; 
+    color: white; 
+    border: none;
+    cursor: pointer;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 20px;
+	width: 100%;
+}
+
+/* Header styles */
+.header {
+    background-color: white;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.header a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.header a.active {
+    font-weight: bold;
+}
+
+.topnav {
+    background-color: gray;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.topnav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+
+/* Intro section styles */
+.intro {
+    background-image: url('tech.jpg');
+    background-size: cover;
+    text-align: center;
+    padding: 100px 0;
+    color: white;
+	font-display: Bold;
+}
+
+.intro h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.intro h3 {
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.intro h5 {
+    font-size: 18px;
+}
+
+/* Gallery section styles */
+.gallery {
+	font-size: 12;
+    padding: 20px;
+    text-align: center;
+	background-color: lightgray;
+	
+}
+
+.gallery h4 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.gallery .tag {
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.gallery button {
+    background-color: gray;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.image-container {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* Footer section styles */
+#contact {
+	font-style: bold;
+    color: black;
+	font-size: 15;
+    text-align: center;
+    padding: 30px 0;
+	background-color: lightgray;
+	
+}
+
+#contact button {
+    background-color: gray;
+    color: red;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Copyright section styles */
+.copyright {
+    color: black;
+    text-align: center;
+    padding: 10px 0;
+}
+
