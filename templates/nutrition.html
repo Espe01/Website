@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Nutrition</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('nutrition') }}">Nutrition</a></li>
+                <li><a href="{{ url_for('fitness') }}">Fitness</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="nutrition">
+        <h2>Nutrition Plans</h2>
+        <p>Access meal plans assigned by your coach and log your food intake to keep a close track of your calorie intake and macros. Track your hydration, steps, and calories burnt on the app.</p>
+        <form action="{{ url_for('nutrition') }}" method="post">
+            <label for="nutrition-plan">Choose a nutrition plan:</label>
+            <select name="nutrition_plan" id="nutrition-plan">
+                <option value="weight_loss">Weight Loss</option>
+                <option value="muscle_gain">Muscle Gain</option>
+                <option value="maintenance">Maintenance</option>
+                <option value="keto">Keto</option>
+                <option value="vegan">Vegan</option>
+            </select>
+            <button type="submit">Submit</button>
+        </form>
+        {% if plan_details %}
+        <section id="plan-details">
+            <h2>Your Selected Nutrition Plan</h2>
+            <p>{{ plan_details.description }}</p>
+            <ul>
+                {% for meal in plan_details.meals %}
+                <li>
+                    <strong>{{ meal.name }}:</strong> {{ meal.details }}
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+        {% endif %}
+    </section>
+</body>
+</html>

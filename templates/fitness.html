@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Fitness</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('nutrition') }}">Nutrition</a></li>
+                <li><a href="{{ url_for('fitness') }}">Fitness</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="fitness">
+        <h2>Fitness Programs</h2>
+        <p>Get a fully personalized fitness plan tailored to your goals, whether it is to gain weight, lose weight, gain muscles, or work on your general fitness.</p>
+        <form action="{{ url_for('fitness') }}" method="post">
+            <label for="fitness-goal">Choose your fitness goal:</label>
+            <select name="fitness_goal" id="fitness-goal">
+                <option value="weight_loss">Weight Loss</option>
+                <option value="muscle_gain">Muscle Gain</option>
+                <option value="general_fitness">General Fitness</option>
+                <option value="weight_gain">Weight Gain</option>
+            </select>
+            <button type="submit">Submit</button>
+        </form>
+        {% if program_details %}
+        <section id="program-details">
+            <h2>Your Selected Fitness Program</h2>
+            <p>{{ program_details.description }}</p>
+            <ul>
+                {% for day, exercises in program_details.program.items() %}
+                <li>
+                    <strong>{{ day }}:</strong>
+                    <ul>
+                        {% for exercise in exercises %}
+                        <li>{{ exercise }}</li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+        {% endif %}
+    </section>
+</body>
+</html>

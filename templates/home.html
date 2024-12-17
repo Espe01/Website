@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        header {
+            background-color: #343a40;
+            color: white;
+            padding: 10px 0;
+        }
+        header h1 {
+            margin: 0;
+            padding-left: 20px;
+        }
+        nav ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        #home {
+            padding: 40px 20px;
+            text-align: center;
+        }
+        #home img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .signout-button {
+            float: right;
+            margin-right: 20px;
+            background-color: #f8f9fa;
+            color: #343a40;
+            border: 1px solid #343a40;
+            padding: 5px 10px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        console.log("Fitness Image URL: ", "{{ url_for('static', filename='IMG_8879.png') }}");
+        console.log("Team Image URL: ", "{{ url_for('static', filename='IMG_9813.PNG') }}");
+    </script>
+
+    <header>
+        <div class="container">
+            <h1>Home</h1>
+            <a href="{{ url_for('signout') }}" class="signout-button">Sign Out</a>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('nutrition') }}">Nutrition</a></li>
+                    <li><a href="{{ url_for('fitness') }}">Fitness</a></li>
+                    <li><a href="{{ url_for('about') }}">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section id="home">
+        <div class="container">
+            <h2>Welcome to Fitness World</h2>
+            <p>Get a fully personalized workout and meal plan tailored to your fitness goals. Progress tracking gets easier when you log your daily workout, record meals, update your check-ins and connect your fitness band & health kit, and get real-time updates via advanced analytical tools.</p>
+            <!-- Insert picture below this comment -->
+            <img src="{{ url_for('static', filename='photos/IMG_8879.PNG') }}" alt="Fitness Image">
+        </div>
+    </section>
+
+    <section id="about-us" class="section">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>We are a team of certified fitness trainers and nutrition experts dedicated to helping you achieve your fitness goals. Our programs are tailored to meet your individual needs and ensure long-lasting results.</p>
+            <!-- Insert team picture below this comment -->
+            <img src="{{ url_for('static', filename='photos/logo.PNG') }}" alt="Team Image">
+        </div>
+    </section>
+
+    <section id="services" class="section">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>Personal Training</h3>
+                    <p>One-on-one training sessions with our expert trainers to guide you through your fitness journey.</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>Nutrition Plans</h3>
+                    <p>Customized meal plans designed to complement your workout routine and help you reach your goals.</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>Online Coaching</h3>
+                    <p>Access our services from anywhere with our comprehensive online coaching programs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="section">
+        <div class="container">
+            <h2>Testimonials</h2>
+            <p>See what our clients have to say about their experiences with us.</p>
+            <blockquote class="blockquote">
+                <p class="mb-0">"Fitness World has completely transformed my life. The trainers are knowledgeable and supportive. Highly recommend!"</p>
+                <footer class="blockquote-footer">Jane Doe</footer>
+            </blockquote>
+            <blockquote class="blockquote">
+                <p class="mb-0">"I achieved my fitness goals faster than I ever imagined. The personalized plans are fantastic!"</p>
+                <footer class="blockquote-footer">John Smith</footer>
+            </blockquote>
+        </div>
+    </section>
+
+    <section id="contact-us" class="section">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or would like to get started, please reach out to us.</p>
+            <p>Email: alfred_luc@yahoo.com | Phone: (123) 456-7890</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Fitness World. All rights reserved.</p>
+            <p>
+                <a href="https://www.facebook.com/luc.alfred.10/">Facebook</a> |
+                <a href="#">Twitter</a> |
+                <a href="https://www.instagram.com/alfred.luc/">Instagram</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
